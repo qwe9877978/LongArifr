@@ -4,7 +4,7 @@
 string multiply(const string& num1, const string& num2) {
 	int n = num1.size(); // Длина первого числа
 	int m = num2.size(); // Длина второго числа
-	string result(n + m, '0'); // Результат умножения, инициализирован нулями
+	string result(n + m, '0'); // Результат умножения с нулями
 
 	// Перемножаем числа поразрядно
 	for (int i = n - 1; i >= 0; i--) {
@@ -23,10 +23,10 @@ string multiply(const string& num1, const string& num2) {
 	if (startpos != string::npos) {
 		return result.substr(startpos); // Возвращаем строку без ведущих нулей
 	}
-	return "0"; // Если результат — ноль, возвращается "0"
+	return "0"; // возвращам 0 при нулевом результате
 }
 
-// Функция возведения числа (в строковом формате) в степень
+// Функция возведения числа (в строковом формате) в степень. был найден метод бинарной экспоненты
 string power(const string& base, int exponent) {
 	string result = "1"; // Начальное значение результата (единица)
 	string current = base; // Текущее основание — начинается с base
@@ -73,10 +73,6 @@ string subtract(const string& num1, const string& num2) {
 }
 
 // Функция сравнения двух длинных чисел:
-// Возвращает:
-// 1 — если num1 > num2
-// -1 — если num1 < num2
-// 0 — если числа равны
 int compare(const string& num1, const string& num2) {
 	if (num1.size() > num2.size()) return 1; // 
 	if (num1.size() < num2.size()) return -1; //
@@ -85,5 +81,9 @@ int compare(const string& num1, const string& num2) {
 		if (num1[i] < num2[i]) return -1;
 	}
 	return 0; // Числа равны
+	// Возвращает:
+	// 1 — если num1 > num2
+	// -1 — если num1 < num2
+	// 0 — если числа равны
 }
 
