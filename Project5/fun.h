@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
+#include <algorithm>//для reverse(просто перевернуть строку)
 using namespace std;
 
 string multiply(const string& num1, const string& num2); // Функция умножения двух длинных чисел (строки)
