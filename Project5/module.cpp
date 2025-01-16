@@ -1,6 +1,6 @@
 #include "fun.h"
 
-// Функция умножения двух длинных чисел (строки)
+// Функция умножения двух длинных чисел (строки)  столбиком
 string multiply(const string& num1, const string& num2) {
 	int n = num1.size(); // Длина первого числа
 	int m = num2.size(); // Длина второго числа
@@ -19,14 +19,14 @@ string multiply(const string& num1, const string& num2) {
 	}
 
 	// Удаляем ведущие нули из результата, если они есть
-	size_t startpos = result.find_first_not_of("0");
+	size_t startpos = result.find_first_not_of("0"); //тут используется функция для поиска первого символа в строке, который не представлен в заданном наборе символов
 	if (startpos != string::npos) {
 		return result.substr(startpos); // Возвращаем строку без ведущих нулей
 	}
 	return "0"; // возвращам 0 при нулевом результате
 }
 
-// Функция возведения числа (в строковом формате) в степень. был найден метод бинарной экспоненты
+// Функция возведения числа (в строковом формате) в степень. Используется метод бинарной экспоненты.
 string power(const string& base, int exponent) {
 	string result = "1"; // Начальное значение результата (единица)
 	string current = base; // Текущее основание — начинается с base
@@ -42,7 +42,7 @@ string power(const string& base, int exponent) {
 	return result;
 }
 
-// Функция вычитания длинных чисел (строк). подобие столбиком вычитание
+// Функция вычитания длинных чисел (строк). Вычитание столбиком
 string subtract(const string& num1, const string& num2) {
 	string result; // Результат
 	int n = num1.size(); // Длина уменьшаемого
